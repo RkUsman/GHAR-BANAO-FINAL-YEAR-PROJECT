@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>GB-Signup</title>
+  
+  <link rel="stylesheet" href="{% static 'core/css/login.css' %}">
+
+</head>
+<body>
+
+ 
+  <div class="signhiwid">
+  <div class="signlogo"> 
+    <img loading="lazy"  src="{% static 'core/images/logo.png' %}" alt="ghar banao" width = "100%">
+  </div>
+</div>
+  
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>Sign-up <br>سائن اپ کریں</h2>
+{% if messages %}
+
+{% for message in messages %}
+  
+
+<span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+{% endfor %}
+
+{% endif %}
+{% if error %}
+
+{{error}}
+{% endif %}
+  
+
+  <form  method = "POST" action ="{% url 'cus_signup' %}" id="login-form">
+    {% csrf_token %}
+    <p>
+    <input type="text" id="username"  name="username" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+      <input type="text" id="name"  name="cus_name" placeholder="Enter Customer Name " required><i class="validation"><span></span><span></span></i>
+      </p>
+    
+    <p>
+      <input type="password" id="email" name="password" placeholder="password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+      <input type="text" id="address" name="address1"  placeholder="Enter your home address" required><i class="validation"><span></span><span></span></i>
+      </p>
+      <p>
+        <input type="text" id="contact"  name="contact" placeholder="Enter your Contact Number" required><i class="validation"><span></span><span></span></i>
+        </p>
+    <p>
+    <input type="submit"  value="Sign-up سائن اپ کریں">
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>a member? <a href="{% url 'cus_login' %}">Log-in</a><p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+
+  
+</body>
+</html>

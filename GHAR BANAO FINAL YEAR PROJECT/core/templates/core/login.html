@@ -1,0 +1,56 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>GB-login</title>
+  
+  <link rel="stylesheet" href="{% static 'core/css/login.css' %}">
+
+</head>
+<body>
+  <div class="signhiwid">
+    <div class="signlogo"> 
+      <img loading="lazy"  src="{% static 'core/images/logo.png' %}" alt="ghar banao" width = "100%">
+    </div>
+  </div>
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>Login <br>لاگ ان کریں</h2>
+
+  {% if messages %}
+
+{% for message in messages %}
+  
+
+<span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+{% endfor %}
+
+{% endif %}
+
+{% if error %}
+
+{{error}}
+{% endif %}
+  
+  <form  method = "POST" action ="{% url 'cus_login' %}" id="login-form">
+    {% csrf_token %}
+    <p>
+    <input type="text" id="username" name="logusername" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="password" id="pass" name="logpass" placeholder="password" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="submit"  value="Login لاگ ان کریں">
+    </p>
+  </form>
+  <div id="create-account-wrap">
+    <p>Not a member? <a href="{% url 'cus_signup' %}" >Create Account</a><p>
+      <p>password not remember?  <a href="">Forget password</a><p></p>
+  </div><!--create-account-wrap-->
+</div><!--login-form-wrap-->
+<!-- partial -->
+  
+</body>
+</html>

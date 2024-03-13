@@ -1,0 +1,143 @@
+.cloumn{
+    float: left;
+    width: 350px ;
+    padding:30px ;
+    margin-left: 30px;
+}
+
+.row::after{
+
+    content: "";
+    display: table;
+    clear: both;
+    box-sizing: border-box;
+}
+
+.login-btn input{
+    color: whitesmoke;
+    padding: 8px 8px 8px 8px;
+    border-color: rgb(206, 203, 203);
+    border-width: 7px;
+    border-style: groove;
+    background-color:#20201e;
+      
+   
+    
+    margin-left: 200px;
+    margin-right:0px;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    list-style: none;
+
+   
+}
+
+
+.pos1{
+    margin-left: 125px;
+    margin-right: 0px;
+    display: inline-block;
+}
+.pos2{
+    margin-left: 30px;
+    margin-right: 0px;
+    display: inline-block;
+}
+
+
+.login-btn ul li  {
+    list-style: none;
+    display: inline-flex;
+    
+}
+
+
+
+/* feature product :start */
+
+
+
+.cusblock{
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 35px;
+    padding-right: 25px;
+}
+
+.col-4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-4 img{
+    width: 200px;
+    padding-bottom: 30px;
+    
+}
+
+.title{
+    text-align: center;
+    margin: 0 auto 80px;
+    position: relative;
+    line-height: 60px;
+    color: #555;
+}
+.title::after{
+    content: '';
+    background: #ff523b;
+    width: 80px;
+    height: 5px;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* 
+featire product end  */
+/* line */
+.cussize{
+    height: 500px;
+    width: 30px;
+}
+
+
+.cusimg img{
+    height: 130px;
+    width: 130px;
+    margin-top: 10px;
+    margin-right: 50px;
+    margin-left: -70px;
+
+    
+}
+/* for cement product on home page effect */
+
+.cusimgeffect:hover{
+    transition: 1s;
+    transform: scale(1.1);
+    z-index: 1;
+} 
+/* for cement product on home page effect end */
+
+.cusblur{
+    background: #555;
+    backface-visibility: 15px;
+    z-index: 1;
+}
+
+#cussizebook{
+    display: block;
+    box-sizing: border-box;
+    width: 15%;
+    outline: none;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 4px;
+    margin-left: 500px;
+  
+  }

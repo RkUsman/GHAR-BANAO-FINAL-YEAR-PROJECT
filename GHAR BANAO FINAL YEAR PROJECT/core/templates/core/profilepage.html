@@ -1,0 +1,68 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Profile</title>
+  <link rel="stylesheet" href="{% static 'core/css/profilepagedet.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'core/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/custom.css' %}">
+
+  
+</head>
+{% include 'core/navbar.html' %} 
+<body>
+ 
+ 
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>Customer Profile</h2>
+
+  {% if messages %}
+
+{% for message in messages %}
+  
+
+<span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+{% endfor %}
+
+{% endif %}
+
+{% if error %}
+
+{{error}}
+{% endif %}
+  
+  <form  method = "" action ="" id="login-form">
+  {% for obj in profilepage %}
+  <label class = "lablpos">Customer Name</label><br>
+    <p>
+      
+    <input type="text" id="username" name="logusername" placeholder="{{obj.cus_name}}" required>
+    </p>
+    <label class = "lablpos">Customer Contact</label><br>
+    <p>
+    <input type="text" id="pass" name="yourname" placeholder="{{obj.contact}}" required>
+    </p>
+    <label class = "lablpos">Customer Address1</label><br>
+    <p>
+        <input type="text" id="pass" name="bookaddress" placeholder="{{obj.address1}}" required>
+        </p>
+        <label class = "lablpos">Customer Address2</label><br>
+        <p>
+          <input type="text" id="pass" name="bookaddress" placeholder="enter address2" required>
+          </p>
+    <p>
+  {% endfor %}
+    {% comment %} <input type="submit"  value="Update Profile" id = "cussizebook"> {% endcomment %}
+    </p>
+    
+  </form>
+
+
+
+</body>
+
+{% include 'core/footer.html' %}
+</html>

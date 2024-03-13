@@ -1,0 +1,121 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'core/plugins/fontawesome/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'core/css/contactus.css' %}">
+    <title>Contact Us</title>
+</head>
+{% include 'core/navbar.html' %} 
+<body>
+
+    <div class="containercontact">
+
+
+
+        {% if messages %}
+
+        {% for message in messages %}
+          
+        
+        <span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+        {% endfor %}
+        
+        {% endif %}
+        
+        {% if error %}
+        
+        {{error}}
+        {% endif %}
+
+
+
+
+
+        <div class="content">
+            <div class="left-side">
+                <div class="row">
+                    <div class="column left">
+                <div class="address details">
+                    <i class="fas fa-map-marker-alt"></i>
+
+
+
+                    
+                    <div class="topic">Address</div>
+                    <div >
+                        <a href="https://www.google.com/maps/dir//Al+Hafeez+Heights,+G87V%2BRWV,+Block+D1+Block+D+1+Gulberg+III,+Lahore,+Punjab/@31.4793897,74.3175185,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x39190573d80f41bd:0x2e5c341b610ea82!2m2!1d74.3448003!2d31.5146002!3e0" class="text-one">AL Hafeez Heights</a>
+                    </div>
+                    <div >
+                        <a href="https://www.google.com/maps/dir//Al+Hafeez+Heights,+G87V%2BRWV,+Block+D1+Block+D+1+Gulberg+III,+Lahore,+Punjab/@31.4793897,74.3175185,13z/data=!4m9!4m8!1m0!1m5!1m1!1s0x39190573d80f41bd:0x2e5c341b610ea82!2m2!1d74.3448003!2d31.5146002!3e0" class="text-one">Gulberg III, Lahore</a>
+                    </div>
+                </div>
+            </div>
+            <div class="column middle">
+                <div class="phone details">
+                    <i class="fas fa-phone-alt"></i>
+                    <div class="topic">Phone</div>
+                    <div >
+                        <a href="tel:+923095571092" class="text-one"><strong>+92 (309) 557-1092</strong></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="column right">
+                <div class="email details">
+                    <i class="fas fa-envelope"></i>
+                    <div class="topic">Email</div>
+                    <div >
+                        <a href="mailto:mu380000@gmail.com" class="text-one"><strong>GharBano@gmail.com</strong></a>
+                    </div>
+                    <div >
+                        <a href="mailto:mu380000@gmail.com" class="text-two">info.mu380000@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+            <div class="right-side">
+                <div class="topic-text">Send us a Message</div>
+                <p>If you want to contact us Please fill the form</p>
+
+
+
+             
+
+            
+                <form method ="POST" action ="{% url 'contactus' %}"  >
+                    {% csrf_token %}
+                    <div class="input-box">
+                        <input type="text" placeholder="username" id="cusname" name = "cusname"  required>
+                      </div>
+                    
+                
+                      <div class="input-box">
+                        <input type="text" placeholder="Phone No" id="phoneno" name = "phoneno"  required>
+                      </div>
+                    <div class="input-box">
+                        <input type="email"  placeholder="Enter your email" id="email" name = "email" >
+                      </div>
+                      <div class="input-box message-box">
+                        <textarea placeholder="Enter your message" id="msg" name = "msg" required ></textarea>
+                      </div>
+                      <div class="button">
+                        <input type="submit" value="Send Now" >
+                      </div>
+                </form>
+            </div>
+          </div>
+        </div>
+    </div>
+ 
+
+    
+    <script src="{% static 'core/js/contactus.js'%}"></script>
+</body>
+{% include 'core/footer.html' %} 
+</html>

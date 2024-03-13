@@ -1,0 +1,78 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Customer Profile</title>
+  <link rel="stylesheet" href="{% static 'laborservices/css/booklbrdisp.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'core/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/custom.css' %}">
+
+  
+</head>
+{% include 'core/navbar.html' %} 
+<body>
+ 
+ 
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>MY LABOR ORDER</h2>
+
+  {% if messages %}
+
+{% for message in messages %}
+  
+
+<span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+{% endfor %}
+
+{% endif %}
+
+{% if error %}
+
+{{error}}
+{% endif %}
+  
+  <form  method = "" action ="" id="login-form">
+  {% comment %} {% for obj in show %} {% endcomment %}
+
+  <div>
+    <table id="customers">
+      <tr>
+        
+        <th>CARPENTER NAME</th>
+        <th>USER NAME</th>
+        <th>CUSTOMER NAME</th>
+        <th>ADDRESS</th>
+        <th>PAYMENT MODE</th>
+        <th>REVIEW</th>
+      </tr>
+      {% for obj in show%}
+      <tr>
+        
+        <td>{{obj.carpen_name}}</td>
+        <td>{{obj.userName}}</td>
+        <td>{{obj.Customer_name}}</td>
+        <td>{{obj.HomeAddress}}</td>
+        <td>{{obj.payment_mode}}</td>
+        <td>
+          <button type="button" class="btn btn-secondary">Give Review</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </div>
+     </table>
+  
+
+  {% comment %} {% endfor %} {% endcomment %}
+   
+    
+  </form>
+
+
+
+</body>
+
+{% include 'core/footer.html' %}
+</html>

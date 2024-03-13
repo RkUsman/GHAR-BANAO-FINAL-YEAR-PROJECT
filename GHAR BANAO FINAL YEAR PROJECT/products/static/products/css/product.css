@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: rgba(184, 184, 184, 0.411);
+}
+
+/* animation  */
+
+.rowprod{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+
+.small-containerprod{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 20px;
+}
+.col4{
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 300px;
+    margin-bottom: 50px;
+    margin-right: 3px;
+    transition: transform 0.5s;
+}
+.col4 img{
+    height: 280px;
+    width:280px;
+    padding: 4px;
+}
+
+h4{
+    color: #555;
+    font-weight: normal;
+}
+.col4 p{
+    font-size: 30px;
+}
+.rating .fa{
+    color: rgb(184, 150, 50);
+    padding: 1px 2px ;
+}
+.col4:hover{
+    transform: translateY(-20px);
+}
+
+
+/* All Products */
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+    color: #ff523b;
+}
+select{
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+select:focus{
+    outline: none;
+}
+.bodimg{
+    border: 8px solid rgb(184, 150, 50);
+    padding: 2px;
+
+}

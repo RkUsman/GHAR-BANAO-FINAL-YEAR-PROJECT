@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHAR BANAO</title>
+    
+    <link rel="icon"  href="{% static 'core/images/favicon.png' %}">
+    <link rel="stylesheet" href="{% static 'gb_readymadehouse/css/readymadehouse.css' %}">
+    
+</head>
+
+<body>
+    
+
+<div id="labour_services">
+    <h1 class="services animate-charcter">Buy Our ReadyMade House <br> BY GHAR BANAO Image gallery</h1>
+
+        <form method="" enctype="multipart/form-data"> 
+            {% for item in imggalery %}
+        
+        
+    <div class="sectionhome33">
+        <p> {{item.desc}}</p>
+        <hr>
+        <br>
+       
+        <img src="{{item.image.url}}" alt="" width = '100%'> 
+       
+    </div>
+
+   
+
+
+    
+</form>
+{% endfor %}
+
+
+        
+
+
+   
+
+   
+</div>
+<br>
+
+
+
+    
+
+</body>
+</html>

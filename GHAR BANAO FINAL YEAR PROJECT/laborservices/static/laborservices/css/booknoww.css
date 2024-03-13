@@ -1,0 +1,234 @@
+
+.error{
+  color: red;
+}
+.success{
+  color:green;
+  font-size: 30px;
+}
+
+h2 {
+  font-weight: 300;
+  text-align: center;
+}
+
+p {
+  position: relative;
+}
+
+
+
+#login-form-wrap {
+  background-color: #fff;
+  width: 95%;
+  height: 850px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 20px 0 0 0;
+  border-radius: 4px;
+  box-shadow: 0px 30px 50px 0px rgba(0, 0, 0, 0.2);
+}
+
+#login-form {
+  padding: 0 60px;
+
+}
+
+p input {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  outline: none;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 4px;
+}
+#cussizebook{
+  display: block;
+  box-sizing: border-box;
+  width: 10%;
+  outline: none;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 4px;
+  margin-left: 500px;
+
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 0 0 0 10px;
+  margin: 0;
+  color: #8a8b8e;
+  border: 1px solid #c2c0ca;
+  font-style: normal;
+  font-size: 16px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  display: inline-block;
+  background: none;
+}
+input[type="text"]:focus,
+input[type="email"]:focus {
+  border-color: #3ca9e2;
+}
+
+
+input[type="submit"] {
+  border: none;
+  display: block;
+  background-color:#e2ad3c;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  font-size: 18px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+input[type="submit"]:hover {
+  background-color: #d1d8db;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+#create-account-wrap {
+  background-color: #eeedf1;
+  color: #8a8b8e;
+  font-size: 14px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 0 0 4px 4px;
+}
+.signlogo{
+  height: 150px;
+  width: 150px;
+  padding-top: 0px;
+  position:inline;
+  
+}
+.signhiwid{
+  height: 20px;
+  width: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+h1{
+  text-align: center;
+  color:rgb(235, 227, 227);
+  font-size: 30px;
+}
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 70%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 0px;
+  font-size: 25px;
+  text-align: left;
+  background-color: #b8871f;
+  color: white;
+}
+table{
+  height: 100%;
+  width: 100%;
+  margin-left: 170px;
+}
+
+/* dailyprice list ki navbar ki css yaha sy set krni hai */
+.center{
+
+  display: inline-block;
+  margin-left: 300px;
+  margin-bottom: 30px;
+  
+}
+.center ul {
+
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  
+}
+.center li{
+  float: left;  /* navbar ko seda is sy kiya */
+}
+
+.center li a {
+  display: block;
+  color: white;
+  font-size: 30px;
+
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.center li a:hover {
+  background-color: rgb(180, 151, 54);
+}
+.activepri {
+  background-color: #b8871f;
+}
+/* dailyprice list ki navbar ki css yaha py end ho rhi hai */
+.button {
+  background-color:#b8871f; /* Green */
+  border: none;
+  color: #ffffff;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 30px;
+  margin-top: 1px;
+  margin-bottom: 15px;
+}
+
+.dailyprice{
+  display: block;
+  height: 120px;
+  width: 350px;
+  margin-top: -460px;
+  margin-bottom: 80px;
+}
+
+
+
+

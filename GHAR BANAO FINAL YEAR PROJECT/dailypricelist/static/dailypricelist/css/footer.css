@@ -1,0 +1,121 @@
+.footer {
+    background-color: #0d0d0d;
+    color: #999;
+  }
+  
+  .footer-main {
+    padding: -200px 0 60px;
+  }
+  
+  .footer .widget-title {
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+    margin-top: 30px;
+    margin-bottom: -80px;
+    padding-left: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    border-left: 3px solid #ffb600;
+  }
+  
+  /* Footer about us */
+  .footer-logo {
+    margin-top: 90px;
+    margin-bottom: 25px;
+  }
+  
+  /* Footer social */
+  .footer-social {
+    margin-top: 15px;
+  }
+  
+  .footer-social .widget-title {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: -900px;
+  }
+  
+  .footer-social ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -13px;
+  }
+  .footer-social ul li {
+    display: inline-block;
+  }
+  .footer-social ul li a i {
+    display: block;
+    font-size: 16px;
+    color: #999;
+    transition: 400ms;
+    padding: 10px 13px;
+  }
+  .footer-social ul li:hover {
+    color: #fff;
+  }
+  
+  /* Links */
+  .footer-widget ul.list-arrow{
+    margin-top: 110px;
+  }
+  .footer-widget ul.list-arrow li {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    padding: 0px 0;
+    
+  }
+  
+  .footer-widget ul.list-arrow li:last-child {
+    border-bottom: 0;
+  }
+  
+  .footer-widget ul.list-arrow li a,
+  .footer-widget ul.list-arrow li:before {
+    color: #747474;
+  }
+  
+  .footer-widget ul.list-arrow li:hover a,
+  .footer-widget ul.list-arrow li:hover {
+    color: #ffb600;
+  }
+  
+  .working-hours {
+    margin-top:110px;
+    padding-right: 40px;
+  }
+  
+  .working-hours .text-right {
+    float: right;
+  }
+  
+  /*-- Copyright --*/
+  .copyright {
+    background: #ffb600;
+    color: #111;
+    padding: 25px 0;
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    font-size: 12px;
+  }
+  
+  .footer-menu ul li {
+    display: inline-block;
+    line-height: 12px;
+    padding-left: 15px;
+    color: #0d0d0d;
+  }
+  .footer-menu ul li a{
+      color:#111;
+  }
+  
+  .footer-menu ul.nav li a {
+    background: none;
+    color: #111;
+    padding: 0;
+  }
+  
+  .footer-menu ul li a:hover {
+    color: #fff;
+  }

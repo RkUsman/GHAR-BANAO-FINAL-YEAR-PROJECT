@@ -1,0 +1,78 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>MY ORDERS</title>
+  <link rel="stylesheet" href="{% static 'products/css/orderdisp.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'core/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'core/css/custom.css' %}">
+
+  
+</head>
+{% include 'core/navbar.html' %} 
+<body>
+ 
+ 
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2 class = "animate-charcter">Welcome Dear Customer <br>{{request.user}}<hr>Below is your order list</h2>
+
+  {% if messages %}
+
+{% for message in messages %}
+  
+
+<span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+{% endfor %}
+
+{% endif %}
+
+{% if error %}
+
+{{error}}
+{% endif %}
+  
+  <form  method = "" action ="" id="login-form">
+  {% comment %} {% for obj in show %} {% endcomment %}
+
+  <div>
+    <table id="customers">
+      <tr>
+        
+        <th>IMAGE</th>
+        <th>.PRODUCT NAME.</th>
+        <th>.QUANTITY.</th>
+        <th>.PRICE.</th>
+        <th>.STATUS.</th>
+        <th>.REVIEW.</th>
+      </tr>
+      {%for op in orderplace%}
+      <tr>
+        
+        <td><img src="{{op.gs_product.prod_img.url}} "width = "200px"></td>
+        <td>{{op.gs_product.title}}</td>
+        <td>{{op.quantity}}</td>
+        <td>RS: {{op.total_cost}}</td>
+        <td>{{op.status}}</td>
+        <td>
+          <button type="button" class="btn btn-secondary">Give Review</button>
+        </td>
+      </tr>
+      {% endfor %}
+    </div>
+     </table>
+  
+
+  {% comment %} {% endfor %} {% endcomment %}
+   
+    
+  </form>
+
+
+
+</body>
+
+{% include 'core/footer.html' %}
+</html>

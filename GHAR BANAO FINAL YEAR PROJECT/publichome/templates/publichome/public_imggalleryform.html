@@ -1,0 +1,43 @@
+{% include "core/libaries.html" %}
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'publichome/css/galleryuploadform.css' %}">
+</head>
+<body>
+    <div class="container">
+
+        {% if messages %}
+
+        {% for message in messages %}
+          
+        
+        <span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+        {% endfor %}
+        
+        {% endif %}
+        {% comment %} start {% endcomment %}
+          <div class="py-5 text-center bg-secondary text-white">  
+            <h1 class = "mb-3">upload image</h1>
+            <form method="post" action = "" enctype="multipart/form-data"> 
+                {%csrf_token%}
+                {{form}}
+                <input type = "submit" class = "btn btn-danger" value = "Upload">
+                
+            </form>
+           
+
+      
+            {% comment %} main img show code {% endcomment %}
+
+      
+           {% comment %} main img show code end {% endcomment %}
+    
+</body>
+</html>

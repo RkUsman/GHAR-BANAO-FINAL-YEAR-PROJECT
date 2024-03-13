@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon
+================================================== -->
+<link rel="icon" type="images/png" href="{% static 'core/images/favicon.png' %}">
+
+  <link rel="stylesheet" href="{% static 'dailypricelist/css/dailypricelist.css' %}">
+  <title>Cement</title>
+</head>
+{% include 'core/navbar.html' %}
+<body>
+  
+
+  <h1 > <b>CEMENT PRICE LIST</b> </h1>
+  <div class="center">
+    
+    <ul>
+      <li class = "activepri"><a href="">CEMENT</a></li>
+      <li><a href="">STEEL</a></li>
+      <li><a href="">BRICKS</a></li>
+      <li><a href="">SAND</a></li>
+    </ul>
+
+</div>
+<div>
+  <table id="customers">
+    <tr>
+      <th>Serial No</th>
+      <th>Brand</th>
+      <th>Date</th>
+      <th>Unit</th>
+      <th>Price</th>
+    </tr>
+    {% for dp in dailyprice%}
+    <tr>
+      <td>{{dp.proserialnum}}</td>
+      <td>{{dp.probrand}}</td>
+      <td>{{dp.prodate}}</td>
+      <td>{{dp.prounit}}</td>
+      <td>{{dp.proprice}}</td>
+    </tr>
+    {% endfor %}
+  </div>
+   </table>
+  <div class="goback">
+  <a href="https://www.youtube.com/watch?v=hV8EGTjzD2s" target="blank">
+    <input type="button" value="GO BACK" class="button">
+  </a>
+</div>
+
+<div class="dailyprice">
+  <img src="{% static 'dailypricelist/images/cementprice.jpg' %}" alt="" width="100%"> 
+</div>
+
+
+
+{% include 'core/footer.html' %}
+
+
+</body>
+</html>

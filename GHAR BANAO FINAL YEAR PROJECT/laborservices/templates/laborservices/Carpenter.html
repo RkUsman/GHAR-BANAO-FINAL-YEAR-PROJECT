@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <!-- Favicon
+================================================== -->
+  <link rel="icon" type="images/png" href="{% static 'core/images/favicon.png' %}">
+    {% block title %}
+    <title> Carpenter</title>
+    {% endblock title %}
+    <link rel="stylesheet" href="{% static 'laborservices/css/style.css' %}">
+    {% comment %} {% include 'core/libaries.html' %} {% endcomment %}
+</head>
+{% include 'core/navbar.html' %} 
+<body>
+    
+    {% comment %} main div labor box start {% endcomment %}
+<div id="labour_services"> 
+    {% block mainpageheading %}
+    <h1 class="services">Carpenter</h1>
+    {% endblock mainpageheading %}
+    <form method="" enctype="multipart/form-data"> 
+        {% comment %} {% csrf_token %} {% endcomment %}
+    {% for data in Carpanter %}
+    <div class="section33">
+        <img src="{{data.image.url}}" alt=""> 
+        <h2>{{data.Name}}</h2>
+        <p><b>{{data.price}}</b></p>
+        <p> {{data.description}} </p>
+        <a href="{% url 'lbrbooknow' data.lbrNum %}" class="myButton">Book Now</a>
+    </form>
+    </div>
+    {%endfor%}
+    
+</div>
+{% comment %} main div labor box end {% endcomment %}
+
+   
+
+{% include 'core/footer.html' %}
+</body>
+
+</html>

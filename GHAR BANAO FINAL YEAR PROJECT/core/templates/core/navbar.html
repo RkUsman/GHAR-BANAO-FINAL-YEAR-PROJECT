@@ -1,0 +1,290 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+================================================== -->
+  
+
+  <!-- Mobile Specific Metas
+================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  
+ 
+
+  <!-- Favicon
+================================================== -->
+  <link rel="icon" type="images/png" href="images/favicon.png">
+
+  <!-- CSS
+================================================== -->
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="{% static 'core/plugins/bootstrap/bootstrap.min.css' %}">
+  {% comment %} <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css"> {% endcomment %}
+  <!-- FontAwesome -->
+  {% comment %} <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'core/plugins/fontawesome/css/all.min.css' %}">
+  <!-- Animation -->
+  {% comment %} <link rel="stylesheet" href="plugins/animate-css/animate.css"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'core/plugins/animate-css/animate.css' %}">
+  
+  <!-- slick Carousel -->
+  {% comment %} <link rel="stylesheet" href="plugins/slick/slick.css"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'core/plugins/slick/slick.css' %}">
+  {% comment %} <link rel="stylesheet" href="plugins/slick/slick-theme.css"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'core/plugins/slick/slick-theme.css' %}">
+
+  <!-- Colorbox -->
+  {% comment %} <link rel="stylesheet" href="plugins/colorbox/colorbox.css"> {% endcomment %}
+  <link rel="stylesheet" href="{% static 'core/plugins/colorbox/colorbox.css' %}">
+  <!-- Template styles-->
+   {% comment %} <link rel="stylesheet" href="css/custom.css"> {% endcomment %}
+  
+   <link rel="stylesheet" href="{% static 'core/css/custom.css' %}">
+   
+   
+   
+   {% comment %} <link rel="stylesheet" href="css/navbar.css"> {% endcomment %}
+   <link rel="stylesheet" href="{% static 'core/css/navbar.css' %}">
+   <link rel="stylesheet" href="{% static 'core/css/profile.css' %}">
+   
+  <title>Cement</title>
+
+  <!-- <link rel="stylesheet" href="css/style.css">  -->
+
+  
+
+</head>
+<body>
+  
+
+  <div id="top-bar" class="top-bar">
+    <div class="container1">
+      <div class="row">
+            
+{% comment %} profile html start {% endcomment %}
+{% if request.user.is_authenticated%}
+
+        
+          <div class="dropdownpro">
+            
+            <button class="dropbtnpro"> <strong> <i> {{user.username}}</i> </strong>
+              
+              <span> <i class="fas fa-caret-down"></i></span>
+            </button>
+            <div class="dropdownpro-content">
+              <a href="{% url 'cusprofile' %}">MY PROFILE</a>
+              <a href="{% url 'dispcustodr' %}">MY ORDERS</a>
+              <a href="{% url 'showlbrbook' %}">MY LABOR ORDERS</a>
+              
+              <a href="{% url 'sellhome' %}">SELL YOUR <br> OWN PROPERTY</a>
+              
+              <a href="{% url 'logout' %}"> LOGOUT</a>
+              
+            </div>
+          </div>
+          
+        
+          {% comment %} profile html end {% endcomment %}
+          <a href="{% url 'showcart'  %}"><i class="fas fa-shopping-cart fa-2x ml-4 mt-2"></i></a>
+          <i class="fa fa-heart fa-2x ml-4 mt-2" aria-hidden="true"></i>
+          {%else%}
+
+
+
+          <div class="login-btn">
+                
+            <ul >
+             
+                <li><a href="{% url 'cus_login' %}" ><input type="button" value="LOGIN" ></a></li>
+              
+              
+              
+             
+                <li><a href="{% url 'cus_signup' %}" ><input type="button" value="REGISTER" style = "margin-left: 10px"></a></li>
+              
+            </ul>
+          </div>
+          <!--/ Top info end -->
+          {% endif %}
+
+          
+          <!--/ Top social end -->
+      </div>
+      <!--/ Content row end -->
+    </div>
+    <!--/ Container end -->
+</div>
+    <!--/ Topbar end -->
+<!-- Header start -->
+<header id="header" class="header-one">
+  <div class="bg-white">
+    <div class="container">
+      <div class="logo-area">
+          <div class="row align-items-center">
+            <div class="">
+                <a class="d-block" href="index.html">
+                  
+                  <img loading="lazy" class = "hiwid" src="{% static 'core/images/logo.png' %}" alt="" width="100%">
+                </a>
+            </div><!-- logo end -->
+  
+            
+          </div><!-- logo area end -->
+  
+      </div><!-- Row end -->
+    </div><!-- Container end -->
+  </div>
+
+  <div class="site-navigation">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+              <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div id="navbar-collapse" class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav mr-auto">
+                      <li class="nav-item dropdown active">
+                          <a href="{% url 'home' %}" class="nav-link dropdown-toggle" >Home</a>
+      
+                      </li>
+
+                      <li class="nav-item dropdown">
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Company <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="about.html">About Us</a></li>
+                            
+                            <li><a href="{% url 'faq' %}">Faq</a></li>
+                            
+                          </ul>
+                      </li>
+              
+                      <li class="nav-item dropdown">
+                          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Labor Services <i class="fa fa-angle-down"></i></a>
+                          <ul class="dropdown-menu" role="menu">
+                            <li><a href="{% url 'laborservices' %}">Carpanter.   بڑھئی</a></li>
+                            <li><a href="projects.html">Need Labor.. مستری،مزدور</a></li>
+                            <li><a href="projects-single.html">Plumber.   پلمبر</a></li>
+                            <li><a href="projects.html">Electrication.   الیکٹریشن</a></li>
+                            
+                            <li><a href="projects-single.html">painter.   رنگ ساز</a></li>
+                          </ul>
+                      </li>
+
+
+                      <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Construction Material <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <!-- 1st dropdown -->
+                      
+                       <li class="dropdown-submenu">
+                         <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Grey Structure <br>(تعمر ا تی سا ما ن)</a>
+                         <ul class="dropdown-menu">
+                           <li><a href="{% url 'gsproductpage' %}" target="blank">CEMENT(سیمنٹ)</a></li>
+                           <li><a href="#!">STEEL(سٹیل)</a></li>
+                           <li><a href="#!">SAND(ریت)</a></li>
+                           <li><a href="#!">BRICKS(اینٹیں)</a></li>
+                           <li><a href="#!">CRUSH(بجری)</a></li>
+                         </ul>
+                     </li>
+                     
+                          <!-- 2nd dropdown -->
+
+                     <li class="dropdown-submenu">
+                       <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Tilling&Flooring</a>
+                       <ul class="dropdown-menu">
+                        <li><a href="#!">Master Tiles</a></li>
+                        <li><a href="#!">Pakistan Tiles</a></li>
+                        <li><a href="#!">City Tiles</a></li>
+                        <li><a href="#!">National Tiles</a></li>
+                        <li><a href="#!">Mughal Tiles</a></li>
+                       </ul>
+                   </li>
+
+                          <!-- 3rd dropdown -->
+                          <li class="dropdown-submenu">
+                           <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Electric Products</a>
+                           <ul class="dropdown-menu">
+                             <li><a href="#!">Nation Cable</a></li>
+                             <li><a href="#!">Pakistan Cable</a></li>
+                             <li><a href="#!">Newage Cable</a></li>
+                             <li><a href="#!">Fast Cable</a></li>
+                             
+                           </ul>
+                       </li>
+                       <!-- 4 dropdown -->
+
+                       <li class="dropdown-submenu">
+                         <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Paint Material</a>
+                         <ul class="dropdown-menu">
+                           <li><a href="#!">CEMENT(سیمنٹ)</a></li>
+                           <li><a href="#!">STEEL(سٹیل)</a></li>
+                           <li><a href="#!">SAND(ریت)</a></li>
+                           <li><a href="#!">BRICKS(اینٹیں)</a></li>
+                           <li><a href="#!">CRUSH(بجری)</a></li>
+                         </ul>
+                     </li>
+                     <!-- 5 dropdown -->
+
+                       <li class="dropdown-submenu">
+                           <a href="#!" class="dropdown-toggle" data-toggle="dropdown">Celling</a>
+                           <ul class="dropdown-menu">
+                             <li><a href="#!">Child Menu 1</a></li>
+                             <li><a href="#!">Child Menu 2</a></li>
+                             <li><a href="#!">Child Menu 3</a></li>
+                           </ul>
+                       </li>
+                     </ul>
+                 </li>
+                 <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Buy House <i class="fa fa-angle-down"></i></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="{% url 'readymadehome' %}"> BUY GHAR BANAO House</a></li>
+                    <li><a href="{% url 'pbshowdata' %}">BUY PUBLIC PROPERTY </a></li>
+                    
+                  </ul>
+              </li>
+              
+                      
+              
+            
+              
+                      <li class="nav-item"><a class="nav-link" href="{% url 'contactus' %}">Contact</a></li>
+                    </ul>
+                </div>
+              </nav>
+          </div>
+          <!--/ Col end -->
+        </div>
+        <!--/ Row end -->
+        <div class = 'cussearch'>
+          
+          <form action ="" method = "get" class = "form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <input class = "form-control mr-sm-2" name = "q" type = "search" placeholder = "search" aria-label = "search">
+            <div class = "cussearchbtn"> 
+            <button type="submit" class="btn btn-warning form-inline">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+            
+
+          </form>
+      
+        </div>
+    
+
+      
+    <!--/ Container end -->
+
+  </div>
+  <!--/ Navigation end -->
+</header>
+<!--/ Header end -->

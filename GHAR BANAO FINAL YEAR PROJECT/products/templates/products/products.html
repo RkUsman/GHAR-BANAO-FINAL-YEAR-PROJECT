@@ -1,0 +1,68 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products | GHAR BANAO</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    
+	{% comment %} <link rel="stylesheet" href="product.css"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'products/css/product.css' %}">
+</head>
+{% include 'core/navbar.html' %}
+<body>
+    
+
+    <!-- All Products -->
+
+    <div class="small-containerprod">
+        <div class="row row-2">
+            <h1>CEMENT PRODUCTS <br> .....سیمنٹ کی مصنوعات</h1>
+            
+        </div>
+    
+        
+
+        <div class="rowprod">
+            {%for c in Cement%}
+            <div class="col4 bodimg">
+                <a href="{% url 'prod_det' c.id %}"><img src="{{c.prod_img.url}}" ></a>
+                <h2>{{c.title}}</h2>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                    
+                </div>
+                <a href="{% url 'prod_det' c.id %}"><button type="submit" class="btn btn-success">Buy Now</button></a>
+                <p>RS: {{c.selling_price}}</p>
+            </div>
+            {% endfor %}
+
+            
+           
+           
+        </div>
+        
+    </div>
+    <!-- //All Products End -->
+
+    
+    
+    
+
+    <!-- Footer -->
+    
+    <!-- //Footer End -->
+{% include 'core/footer.html' %}
+</body>
+
+</html>

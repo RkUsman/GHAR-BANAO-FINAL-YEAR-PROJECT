@@ -1,0 +1,81 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Book Labor</title>
+  <link rel="stylesheet" href="{% static 'laborservices/css/booknoww.css' %}">
+  
+  <link rel="stylesheet" href="{% static 'core/css/profile.css' %}">
+  <link rel="stylesheet" href="{% static 'laborservices/css/custom.css' %}">
+
+  
+</head>
+{% include 'core/navbar.html' %} 
+<body>
+ 
+ 
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>BOOK CARPENTER</h2>
+
+  {% if messages %}
+
+{% for message in messages %}
+  
+
+<span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+{% endfor %}
+
+{% endif %}
+
+{% if error %}
+
+{{error}}
+{% endif %}
+  
+  <form  method = "POST" action ="" id="login-form">
+    {% csrf_token %}
+    <p>
+    <input type="text" id="username" name="logusername" placeholder="Username" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+    <input type="text" id="pass" name="yourname" placeholder="Customer Name" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+        <input type="text" id="pass" name="bookaddress" placeholder="Enter home address" required><i class="validation"><span></span><span></span></i>
+        </p>
+
+    
+    <div class="col-md-4 mt-1 px-4 ">
+        <label for="inputNumber" required >Choose a Payment method </label>
+
+            <select name="mode" id="">
+            <option value="JAZZCASH">JAZZCASH</option>
+            <option value="EASYPAISA">EASYPAISA</option>
+            <option value="CASH ON DELIVERY">CASH ON DELIVERY</option>
+            
+            </select>
+    
+    </div>
+    {% if flag == 1%}
+    <div class="col-md-2 ml-auto rounded text-center mt-2" id="contact" style="border: 5px solid #bd7c05; ">
+        <p class="h4">Contact <br> Bial Ahmad</p>
+        <p class="h4">0300-1234567</p>
+    </div>
+    {%endif%}
+    <p>
+    <input type="submit"  value="SUBMIT" id = "cussizebook">
+    </p>
+  </form>
+
+
+ 
+
+
+<!-- partial -->
+  
+</body>
+
+{% include 'core/footer.html' %}
+</html>

@@ -1,0 +1,274 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Des Products |GHAR BANAO</title>
+    
+    
+
+	{% comment %} <link rel="stylesheet" href="STYL.CSS"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'products/css/prod_desc.css' %}">
+</head>
+{% comment %} {% include 'core/navbar.html' %} {% endcomment %}
+
+
+<body>
+    <!-- Single Products -->
+    <div class="small-container single-product">
+        <div class="row bodimg">
+            <div class="col-2">
+                <img src="{{Cement.prod_img.url}}" width="100%" id="ProductImg">
+
+                
+
+            </div>
+            <div class="col-2">
+                
+                <h1>{{Cement.title}}</h1>
+                
+                <h4>Rs.{{Cement.selling_price}}</h4>
+                
+
+                <form action="{% url 'add-to-cart'  %}">
+                    
+                    <input type="hidden" name="Cement_id" value={{Cement.id}}
+                    id = "Cement_id">
+                    <button type="submit" class = "btn btn-primary shadow px-5 py-2"> Add To Cart
+
+                    </button>
+                </form>
+                {% comment %} <a class = "minus-cart btn"> <i class ="fas fa-minus-square fa-lg"></i></a> {% endcomment %}
+                <input type="number" value="5" min = "5">
+                {% comment %} <a href="{% url 'add-to-cart'  %}" class="btn" >Add To Cart</a> {% endcomment %}
+
+                <h3>Product Details <i class="fa fa-indent"></i></h3>
+                <br>
+                <p>{{Cement.description}}
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- //Single Products -->
+
+    <!-- Related Products -->
+
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>Related Products <br> 
+                تمام کمپنیوں کے سیمنٹ نیچے دییےگئے ہیں</h2>
+            
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <a href="product_details.html"><img src="{% static 'core/images/cement/FLYING.png '%}"></a>
+                <h4>DG Khan Cement</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>RS.1,050</p>
+            </div>
+            <div class="col-4">
+                <a href="product_details.html"><img src="{% static 'core/images/cement/PAKCEM-W.png '%}"></a>
+                <h4>Maple Leaf</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>RS.1,020</p>
+            </div>
+            <div class="col-4">
+                <a href="product_details.html"><img src="{% static 'core/images/cement/PAKCEM-W.png '%}"></a>
+                <h4>Lucky Cement</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>RS.1,010</p>
+            </div>
+            <div class="col-4">
+                <a href="product_details.html"><img src="{% static 'core/images/cement/PAKCEM-W.png '%}"></a>
+                <h4>All Company Cement</h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p>Calculate</p>
+            </div>
+        </div>
+        
+    </div>
+    <!-- //All Products End -->
+    
+
+    <!--Rating-->
+
+    <div class="main-section">
+        <div class="hedding-title"><h1>Ratings & Reviews</h1></div>
+        <div class="rating-part">
+        <div class="average-rating">
+        <h2>3.5</h2>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i class="fa fa-star-half-o" aria-hidden="true"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <p>Average Rating</p>
+        </div>
+        <div class="loder-ratimg">
+        <div class="progress"></div>
+        <div class="progress-2"></div>
+        <div class="progress-3"></div>
+        <div class="progress-4"></div>
+        <div class="progress-2"></div>
+        </div>
+        <div class="start-part">
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <span>90%</span><br>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <span>80%</span><br>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <span>40%</span><br>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <span>20%</span><br>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <span>80%</span>
+        </div>
+        <div style="clear: both;"></div>
+        <div class="reviews"><h1>Reviews</h1></div>
+        <div class="comment-part">
+        <div class="user-img-part">
+        <div class="user-img">
+        <img src="{% static 'products/images/person.jpg '%}">
+        </div>
+        <div class="user-text">
+        <h4>8 days ago</h4>
+        <p>Rehmat Ali</p>
+        <span>Report</span>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        <div class="comment">
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <p>I try many Cement but This one is Very Best and also fast delivery and good quality Cement .</p>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        <div class="comment-part">
+        <div class="user-img-part">
+        <div class="user-img">
+        <img src="{% static 'products/images/person.jpg '%}">
+        </div>
+        <div class="user-text">
+        <h4>30 days ago</h4>
+        <p>Asghar</p>
+        <span>Report</span>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        <div class="comment">
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <p>very good quality fastest delivery.The best cement in pakistan.</p>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        <div class="comment-part">
+        <div class="user-img-part">
+        <div class="user-img">
+        <img src="{% static 'products/images/person.jpg '%}">
+        </div>
+        <div class="user-text">
+        <h4>1 days ago</h4>
+        <p>Javeed</p>
+        <span>Report</span>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        <div class="comment">
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <p>Mian quality sy satisfy hon or main apko mashwara dunga ek dafa cement zaror try karain.</p>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        <div class="comment-part">
+        <div class="user-img-part">
+        <div class="user-img">
+        <img src="{% static 'products/images/person.jpg '%}">
+        </div>
+        <div class="user-text">
+        <h4>24 days ago</h4>
+        <p>Noman</p>
+        <span>Report</span>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        <div class="comment">
+        <i aria-hidden="true" class="fa fa-star"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <i aria-hidden="true" class="fa fa-star-o"></i>
+        <p>This Best Quality cement, I recommend it to others to use it to build.</p>
+        </div>
+        <div style="clear: both;"></div>
+        </div>
+        </div>
+        </div>
+
+    <!--//Rating End-->
+    <!-- Footer -->
+    
+    <!-- //Footer End -->
+
+{% comment %} {% include 'core/footer.html' %} {% endcomment %}
+</body>
+
+
+</html>

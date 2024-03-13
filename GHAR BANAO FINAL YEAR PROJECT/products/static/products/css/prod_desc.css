@@ -1,0 +1,277 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.bodimg{
+    border: 8px solid rgb(184, 150, 50);
+    padding: 2px;
+
+}
+
+/* //Single Products  */
+
+.row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.col-2{
+    flex-basis: 50%;
+    min-width: 300px;
+}
+.col-2 img{
+    max-width: 90%;
+    height: 400px;
+    padding: 50px 0;
+    margin-top: -5%;
+    
+}
+.col-2 h1{
+    font-size: 50px;
+    line-height: 60px;
+    margin: 2px 0;
+}
+.btn{
+    display: inline-block;
+    background: #c5412d;
+    color: white;
+    padding: 8px 30px;
+    margin: 30px 0;
+    border-radius: 30px;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #563434;
+}
+
+/* Related Products */
+.small-container{
+    max-width: 1080px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.col-4{
+    flex-basis: 15%;
+    padding: 10px;
+    min-width: 200px;
+    margin-bottom: 50px;
+    transition: transform 0.5s;
+}
+.col-4 img{
+    width: 100%;
+    
+}
+
+h4{
+    color: #555;
+    font-weight: normal;
+}
+.col-4 p{
+    font-size: 14px;
+}
+.rating .fa{
+    color: #ff523b;
+}
+.col-4:hover{
+    transform: translateY(-10px);
+}
+
+.row-2{
+    justify-content: space-between;
+    margin: 100px auto 50px;
+}
+select{
+    border: 1px solid #ff523b;
+    padding: 5px;
+}
+select:focus{
+    outline: none;
+}
+
+
+/* //Related Products */
+
+
+/* Single Product */
+.single-product{
+    margin-top: 50px;
+}
+.single-product .col-2 img{
+    padding: 0;
+}
+.single-product .col-2{
+    padding: 20px;
+}
+.single-product h4{
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+.single-product select{
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+.single-product input{
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-left: 10px;
+    border: 1px solid #ff523b;
+    margin-right: 10px;
+}
+input:focus{
+    outline: none;
+}
+.single-product .fa{
+    color: #ff523b;
+    margin-left: 10px;
+}
+
+/* Media query for 600 screen size */
+@media only screen and (max-width: 600px){
+
+    .row{
+        text-align: center;
+    }
+    .col-2, .col-3, .col-4{
+        flex-basis: 100%;
+    }
+    .single-product .row{
+        text-align: left;
+    }
+    .single-product .col-2{
+        padding: 20px 0;
+    }
+    .single-product h1{
+        font-size: 26px;
+        line-height: 32px;
+    }
+    .cart-info p{
+        display: none;
+    }
+}
+
+/* Review section*/
+
+body{
+    
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    }
+    .main-section{
+    background:#FFFFFF;
+    width:80%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top:50px;
+    box-shadow:0px 2px 7px 1px #aa9191;
+    }
+    .hedding-title h1{
+    margin:0px;
+    padding:0px 0px 10px 0px;
+    font-size:25px;
+    }
+    .average-rating{
+    float:left;
+    text-align: center;
+    width:30%;
+    }
+    .average-rating h2{
+    margin:0px;
+    font-size:80px;
+    }
+    .average-rating p{
+    margin:0px;
+    font-size:20px;
+    }
+    .fa-star,.fa-star-o,.fa-star-half-o{
+    color:#FDC91B;
+    font-size:25px !important;
+    }
+    .progress,.progress-2,.progress-3,.progress-4,.progress-5{
+    background:#F5F5F5;
+    border-radius: 13px;
+    height:18px;
+    width:97%;
+    padding:3px;
+    margin:5px 0px 3px 0px;
+    }
+    .progress:after,.progress-2:after,.progress-3:after,.progress-4:after,.progress-5:after{
+    content: '';
+    display: block;
+    background: #337AB7;
+    width:80%;
+    height: 100%;
+    border-radius: 9px;
+    }
+    .progress-2:after{
+    width: 60%;
+    }
+    .progress-3:after{
+    width:40%;
+    }
+    .progress-4:after{
+    width:20%;
+    }
+    .progress-5:after{
+    width:10%;
+    }
+    .loder-ratimg{
+    display: inline-block;
+    width:40%;
+    }
+    .start-part{
+    float:right;
+    width:30%;
+    text-align: center;
+    }
+    .start-part span{
+    color:#337AB7;
+    font-size:23px;
+    }
+    .reviews h1{
+    margin:10px 0px 20px 30px;
+    }
+    .user-img img{
+    height: 80px;
+    width: 80px;
+    border:1px solid blue;
+    border-radius: 50%;
+    }
+    .user-img-part{
+    width:32%;
+    float:left;
+
+    }
+    .user-img{
+    width:48%;
+    float:left;
+    text-align: center;
+    }
+    .user-text{
+    float:left;
+    }
+    .user-text h4,.user-text p{
+    margin:0px 0px 5px 0px;
+    }
+    .user-text p{
+    font-size: 20px;
+    font-weight: bold;
+    }
+    .user-text h4,.user-text span{
+    color:#B3B5B4;
+    }
+    .comment{
+    width:68%;
+    float:right;
+    width:auto
+    }

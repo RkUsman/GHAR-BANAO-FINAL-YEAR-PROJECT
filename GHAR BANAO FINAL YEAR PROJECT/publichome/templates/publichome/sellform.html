@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>HOME SELLING FORM </title>
+  
+  <link rel="stylesheet" href="{% static 'publichome/css/sell_home.css' %}">
+  
+
+</head>
+<body>
+
+ 
+  <div class="signhiwid">
+  <div class="signlogo"> 
+    <img loading="lazy"  src="{% static 'core/images/logo.png' %}" alt="ghar banao" width = "100%">
+  </div>
+</div>
+  
+<!-- partial:index.partial.html -->
+<div id="login-form-wrap">
+  <h2>SELL YOUR HOME <br>اپنا گھر بچئے وہ بھی با آسانی گھر بیٹھے</h2>
+  {% if messages %}
+
+{% for message in messages %}
+  
+
+<span {% if message.tags %} class= "{{message.tags}}"   {% endif %}> {{message}}</span>
+{% endfor %}
+
+{% endif %}
+  
+
+  <form  method = "POST" action ="{% url 'sellhome' %}" id="login-form">
+    {% csrf_token %}
+    <p>
+        <input type="text" id="user_name"  name="user_name" value = "{{user.username}}" required ><i class="validation"></i>
+        </p>
+    <p>
+    <input type="text" id="ownername"  name="ownername" placeholder="House Owner Name..گھرکےسربراہ کانام " required><i class="validation"><span></span><span></span></i>
+    </p>
+    
+    <p>
+      <input type="text" id="ownercontact" name="ownercontact" placeholder="House Owner Contact" required><i class="validation"><span></span><span></span></i>
+    </p>
+    <p>
+      <input type="text" id="address" name="address"  placeholder="Enter your home address" required><i class="validation"><span></span><span></span></i>
+      </p>
+      
+        <p>
+            <input type="date" id="date"  name="date" placeholder="Enter current date " required><i class="validation"><span></span><span></span></i>
+            </p>
+            <p>
+                <input type="text" id="pricedemand"  name="pricedemand" placeholder="Enter your Demanded Price: eg 40 LAC" required><i class="validation"><span></span><span></span></i>
+
+                </p>
+                <label for="Enter HOME Front Pic" class="form-label">ENTER HOME FRONT PIC</label>
+<input class="form-control" type="file" id="customFile" name = "sellpic" required>
+
+
+
+    <p>
+        <input type="submit"  value="Upload" >
+    <a href="{% url 'uploadimggallery' %}" >
+        
+    <input type="gallery"  value="Add image gallery  معزز کسٹمرر!گھرکےاندرونی حصے کی تصاویرلازمی دیں۔ شکریۂ" >
+    </a>
+    </p>
+  </form>
+
+
+
+
+</div><!--login-form-wrap-->
+<!-- partial -->
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | GB</title>
+    <link rel="stylesheet" href="cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="{% static 'core/plugins/jQuery/jquery.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'products/css/cart.css' %}">
+</head>
+{% include 'core/navbar.html' %}
+<body>
+    
+
+    <!-- Cart items details -->
+    {% block content %}
+    <div class="small-containercart cart-page">
+        <h2>YOUR CART</h2>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Per Bag Price</th>
+            </tr>
+
+
+
+            {% for det in CARTS %}
+            
+            <tr>
+                <td>
+                    <div class="cart-info">
+                        {% comment %} yah per jis mai GS_product odel save kiya hai na wo variable ana hai {% endcomment %}
+                        <img src="{{det.gs_product.prod_img.url}}">
+                        <div>
+                            <p>{{det.gs_product.title}}</p>
+                            <small> {{det.gs_product.description}}</small>
+                            <h4>Actual Price</h4>
+                            <h4>Rs.{{det.gs_product.selling_price}}</h4>
+                            
+                            <a href="#" class = "remove-cart" pid = "{det.gs_product.id}">Remove</a>
+                        </div>
+                    </div>
+                </td>
+                <td><input type="number" min="5" value="{{det.quantity}}"></td>
+                <td>Rs:{{det.gs_product.discounted_price}}</td>
+                
+            </tr>
+            <hr>
+
+
+            {%endfor%}
+            
+            </table>
+            
+
+            <div class="total-price">
+                <table>
+                    <tr>
+                        <td>Subtotal</td>
+                        <td>{{amount}}</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Rs:150</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>{{totalamount}}</td>
+                    </tr>
+                    
+                </table>
+            </div>
+            <a href="{% url 'checkout' %}"><button type="submit" class="btn btn-success">Place order</button></a>
+
+        
+    </div>
+    {% endblock content %}
+
+    <!-- Footer -->
+   
+
+    <!-- javascript -->
+
+    
+  <script src="{% static 'products/js/pro.js'%}"></script>
+</body>
+
+</html>

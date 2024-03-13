@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHAR BANAO</title>
+    <link href="images/logo.png" rel="icon">
+    <link rel="icon"  href="{% static 'core/images/favicon.png' %}">
+
+    <link rel="stylesheet" href="{% static 'gb_readymadehouse/css/readymadehouse.css' %}">
+    
+    
+   
+</head>
+{% include 'core/navbar.html' %} 
+
+
+<body>
+    
+    
+   
+
+<div id="labour_services">
+    <h1 class="services animate-charcter">Buy Public House <br> PUBLIC PROPERTY</h1>
+    <form method="" enctype="multipart/form-data"> 
+        {% for res in res %}
+    <div class="sectionhome33">
+        <img src="{{ res.image.url}}" alt="" width = '100%'> 
+        <h2 class="homehead"> <b> House Owner Name and <br> Contact  </h2>
+        <h2><i> {{ res.owner_name}}   <br> {{res.phoneNumber}} <br> Date  {{res.date_time}} </i></h2>
+        <h2 class="homehead"> <b>Description & Address  </h2>
+        <p>{{ res.description}}</p>
+        <h2 class="homehead"> <b>Price Demanded  </h2>
+       <p ><mark>{{ res.house_price}} </mark></p> 
+        <a href="{% url 'ppreadymadehomegallery' res.id %}" class="myButton">See More photos</a>
+        </form>
+    </div>
+    {% endfor %}
+    
+   
+</div>
+<br>
+
+<script src="{% static 'publichome/js/notification.js'%}"></script>
+<script>
+
+    swal("معززکسٹرحضرات! گزارش ہے کے پبلک پراپرٹی کاکوئ بھی گھر حریدنے سے پہلے گھر بناؤ سے تصدیک لازمی کروایں کے آیا یہ گھر کسی قبضہ داری یہ کسی قانونی کاروائ میں شامل تو نہیں۔اگر کوئ شخص بغیر تصدیک کے گھر حریدے گا۔ بعد میں نقصان کی صورت میں کمپنی(گھر بناؤ) ذمہ دار نہ ہو گی۔شکریہ");
+    
+</script>
+</body>
+{% include 'core/footer.html' %}
+</html>

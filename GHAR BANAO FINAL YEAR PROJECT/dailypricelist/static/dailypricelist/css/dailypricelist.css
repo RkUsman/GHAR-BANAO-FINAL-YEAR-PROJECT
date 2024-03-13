@@ -1,0 +1,110 @@
+
+
+    
+
+h1{
+    text-align: center;
+    color:rgb(235, 227, 227);
+    font-size: 30px;
+}
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #ddd;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  
+  #customers tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-right: 0px;
+    font-size: 25px;
+    text-align: left;
+    background-color: #b8871f;
+    color: white;
+  }
+  table{
+    height: 100%;
+    width: 100%;
+      margin-left: 500px;
+  }
+  
+  /* dailyprice list ki navbar ki css yaha sy set krni hai */
+  .center{
+
+    display: inline-block;
+    margin-left: 500px;
+    margin-bottom: 30px;
+    
+  }
+  .center ul {
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    
+  }
+  .center li{
+    float: left;  /* navbar ko seda is sy kiya */
+  }
+
+  .center li a {
+    display: block;
+    color: white;
+    font-size: 30px;
+
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .center li a:hover {
+    background-color: rgb(180, 151, 54);
+  }
+  .activepri {
+    background-color: #b8871f;
+  }
+  /* dailyprice list ki navbar ki css yaha py end ho rhi hai */
+  .button {
+    background-color:#b8871f; /* Green */
+    border: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 1px;
+    margin-bottom: 15px;
+  }
+
+  .goback {
+    
+      margin-top: 30px;
+    display: block;
+    margin-left: 500px;
+    margin-bottom: 30px;
+  }
+
+  .dailyprice{
+    display: block;
+    height: 120px;
+    width: 350px;
+    margin-top: -460px;
+    margin-bottom: 80px;
+  }
+
+
+ 
+  
